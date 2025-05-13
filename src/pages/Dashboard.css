@@ -1,0 +1,146 @@
+/* Dashboard.css - Adições */
+
+.loading-message {
+  text-align: center;
+  padding: 50px;
+  font-size: 1.5rem;
+  color: var(--text-light-color);
+}
+
+.button-primary {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+.button-primary:hover {
+  background-color: var(--primary-hover-color);
+}
+
+.button-secondary {
+  background-color: var(--secondary-color);
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+  margin-right: 8px; /* Espaçamento entre botões de ação */
+}
+.button-secondary:hover {
+  background-color: #5a6268;
+}
+
+.button-danger {
+  background-color: var(--error-color, #dc3545);
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+.button-danger:hover {
+  background-color: #c82333;
+}
+
+.modal-form {
+  background-color: rgba(0,0,0,0.5); /* Fundo semi-transparente para o modal */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Para ficar sobre outros elementos */
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.book-form {
+  background-color: var(--surface-color);
+  padding: 30px;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  width: 100%;
+  max-width: 500px; /* Largura máxima do formulário */
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.book-form h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--primary-color);
+}
+
+.book-form .form-group {
+  margin-bottom: 15px;
+}
+
+.book-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: var(--text-light-color);
+}
+
+.book-form input[type="text"],
+.book-form input[type="number"],
+.book-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  box-sizing: border-box;
+  font-family: var(--font-secondary);
+}
+.book-form input:focus,
+.book-form textarea:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+}
+
+
+.book-form textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.book-form .form-actions {
+  margin-top: 20px;
+  display: flex;
+  justify-content: flex-end; /* Alinha botões à direita */
+  gap: 10px; /* Espaço entre botões */
+}
+
+.item-card p {
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+.item-card strong {
+  color: var(--text-color);
+}
+
+.item-timestamps {
+  font-size: 0.8rem;
+  color: var(--text-light-color);
+  margin-top: 15px;
+  border-top: 1px solid var(--border-color);
+  padding-top: 8px;
+}
+
+.item-actions {
+  margin-top: 15px;
+  display: flex;
+  justify-content: flex-end; /* Alinha botões de ação do card à direita */
+}

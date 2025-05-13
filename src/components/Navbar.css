@@ -1,0 +1,174 @@
+/* src/components/Navbar.css */
+
+/* Importe as mesmas fontes e variáveis de cores do seu App.css ou index.css se desejar */
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap'); */
+
+/* :root { (se não estiver global)
+  --primary-color: #007bff;
+  --primary-hover-color: #0056b3;
+  --navbar-background: #ffffff;
+  --navbar-text-color: #333;
+  --navbar-link-hover-bg: #f0f0f0;
+  --font-primary: 'Montserrat', sans-serif;
+} */
+
+.navbar {
+  background-color: var(--surface-color, #ffffff); /* Usa variável global ou fallback */
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.1rem;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  font-family: var(--font-primary, 'Montserrat', sans-serif);
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  height: 80px;
+  z-index: 1;
+  width: 100%;
+  max-width: 1300px; /* Ajuste conforme necessário */
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.navbar-logo {
+  color: var(--primary-color, #007bff);
+  justify-self: flex-start;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1.8rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+.navbar-logo:hover {
+  color: var(--primary-hover-color, #0056b3);
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  text-align: center;
+  margin: 0; /* Remove default margin from ul */
+  padding: 0; /* Remove default padding from ul */
+}
+
+.nav-item {
+  height: 80px;
+  display: flex; /* Para centralizar o conteúdo verticalmente */
+  align-items: center; /* Para centralizar o conteúdo verticalmente */
+}
+
+.nav-links {
+  color: var(--text-color, #333);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  height: 100%;
+  display: flex;
+  align-items: center; /* Garante alinhamento vertical do texto */
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s ease-out;
+}
+
+.nav-links:hover {
+  color: var(--primary-color, #007bff);
+  border-bottom: 3px solid var(--primary-color, #007bff);
+}
+
+/* Estilo para o botão de Logout para se parecer com os links */
+.nav-links-button {
+  background-color: transparent;
+  color: var(--text-color, #333);
+  border: none;
+  padding: 0.5rem 1rem;
+  margin: 0; /* Remove default margin from button */
+  font-family: inherit; /* Usa a mesma fonte da navbar */
+  font-size: inherit; /* Usa o mesmo tamanho de fonte dos links */
+  cursor: pointer;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s ease-out;
+}
+
+.nav-links-button:hover {
+  color: var(--primary-color, #007bff);
+  border-bottom: 3px solid var(--primary-color, #007bff);
+}
+
+.menu-icon {
+  display: none; /* Escondido por padrão em telas maiores */
+}
+
+/* Estilos para o menu hambúrguer em telas menores */
+@media screen and (max-width: 960px) {
+  .navbar-container {
+    padding: 0 20px; /* Menor padding em telas mobile */
+  }
+
+  .nav-menu {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: calc(100vh - 80px); /* Altura total menos a altura da navbar */
+    position: absolute;
+    top: 80px; /* Abaixo da navbar */
+    left: -100%; /* Escondido fora da tela */
+    opacity: 1;
+    transition: all 0.4s ease;
+    background-color: var(--surface-color, #ffffff); /* Fundo para o menu mobile */
+    padding-top: 2rem; /* Espaço no topo do menu mobile */
+  }
+
+  .nav-menu.active {
+    left: 0; /* Mostra o menu */
+    opacity: 1;
+    transition: all 0.4s ease;
+    z-index: 1;
+  }
+
+  .nav-item {
+    width: 100%;
+    height: auto; /* Altura automática para itens no mobile */
+  }
+
+  .nav-links, .nav-links-button {
+    text-align: center;
+    padding: 1.5rem; /* Mais padding para toque fácil */
+    width: 100%;
+    display: table;
+    border-bottom: none; /* Remove borda inferior para links no mobile */
+  }
+
+  .nav-links:hover, .nav-links-button:hover {
+    color: var(--primary-color, #007bff);
+    background-color: var(--navbar-link-hover-bg, #f0f0f0);
+    border-bottom: none; /* Sem borda no hover mobile */
+    border-radius: var(--border-radius, 8px);
+  }
+
+  .menu-icon {
+    display: block; /* Mostra o ícone do menu */
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-100%, 60%);
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: var(--text-color, #333);
+  }
+
+  .menu-icon .fa-times { /* Estilo para o ícone de fechar */
+    color: var(--primary-color, #007bff);
+  }
+}

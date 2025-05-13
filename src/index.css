@@ -1,0 +1,58 @@
+/* App.css ou index.css */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Roboto:wght@400;500&display=swap');
+
+:root {
+  --primary-color: #007bff; /* Azul vibrante */
+  --primary-hover-color: #0056b3;
+  --secondary-color: #6c757d; /* Cinza neutro */
+  --background-color: #f4f7f6; /* Um cinza bem claro para o fundo */
+  --surface-color: #ffffff; /* Cor de superfície para cards, modais */
+  --text-color: #333333;
+  --text-light-color: #555555;
+  --border-color: #dee2e6;
+  --error-color: #dc3545;
+  --success-color: #28a745;
+
+  --font-primary: 'Montserrat', sans-serif;
+  --font-secondary: 'Roboto', sans-serif;
+
+  --border-radius: 8px;
+  --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-secondary);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-primary);
+  color: var(--primary-color);
+  margin-top: 0;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: var(--primary-hover-color);
+}
+
+/* Estilos para react-toastify (opcional, mas recomendado para consistência) */
+.Toastify__toast-container {
+  font-family: var(--font-secondary);
+}
+
+.Toastify__toast--success {
+  background-color: var(--success-color) !important; /* Use !important com cuidado */
+}
+
+.Toastify__toast--error {
+  background-color: var(--error-color) !important;
+}
