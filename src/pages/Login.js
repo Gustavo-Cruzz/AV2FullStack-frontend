@@ -14,7 +14,7 @@ export default function LoginUser() {
     e.preventDefault();
     setIsLoading(true);
     try {
-      const data = await loginUser(email, password);
+      const data = await login(email, password);
       saveToken(data.token);
       toast.success('Login realizado com sucesso!');
       navigate('/dashboard');

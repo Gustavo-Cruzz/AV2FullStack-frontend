@@ -16,7 +16,7 @@ export default function registerUser() {
     e.preventDefault();
     setIsLoading(true);
     try {
-      await registerUser(name, email, password);
+      await register(name, email, password);
       toast.success('Cadastro realizado com sucesso! Faça login para continuar.');
       navigate('/login');
     } catch (err) {
